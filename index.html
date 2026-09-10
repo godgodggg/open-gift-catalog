@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Attune — подбор подарков по человеку, поводу, интересам и типу."
+    />
+    <title>Attune — категории вместо догадок</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Roboto+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=16" />
+  </head>
+  <body>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__brand" aria-label="Attune">ATTUNE<span>®</span></div>
+        <div class="hero__edition">GIFT INDEX / 001</div>
+
+        <div class="hero__content">
+          <p class="hero__eyebrow">ПОДБЕРИ ПОДАРОК, КОТОРЫЙ ПОПАДЁТ В ТОЧКУ</p>
+          <h1 id="hero-title">
+            КАТЕГОРИИ <span>/</span><br />
+            ВМЕСТО ДОГАДОК
+          </h1>
+          <button class="hero__cta" type="button" data-open-index>
+            <span>ОТКРЫТЬ КАТЕГОРИИ</span>
+            <span class="hero__cta-arrow" aria-hidden="true">↓</span>
+          </button>
+        </div>
+
+        <div class="hero__note">ПЕРВЫЙ ПРОТОТИП / DESKTOP</div>
+      </section>
+
+      <section class="selector" id="gift-index" aria-labelledby="selector-title" aria-hidden="true" inert>
+        <header class="selector__header">
+          <span class="selector__logo" aria-label="Attune">ATTUNE®</span>
+          <p>ИНДЕКС ПОДАРКОВ / ТЕСТОВАЯ ВЕТКА</p>
+          <button class="reset-button" type="button" data-reset>НАЧАТЬ ЗАНОВО ↺</button>
+        </header>
+
+        <div class="selector__layout">
+          <nav class="progress" aria-label="Маршрут подбора">
+            <div class="progress__heading">
+              <p>Ваш маршрут</p>
+              <span data-route-counter>Шаг 1 из 6</span>
+            </div>
+            <ol class="progress__list" data-progress></ol>
+          </nav>
+
+          <div class="question-workspace">
+            <div class="question-scroll" data-question-scroll>
+              <div class="question-panel" aria-live="polite" data-question-panel>
+                <h2 id="selector-title" data-question>КОМУ ИЩЕМ ПОДАРОК?</h2>
+                <p class="question-panel__hint" data-hint>
+                  Сейчас открыта одна тестовая ветка — проверяем механику и внешний вид.
+                </p>
+                <div class="options" data-options></div>
+              </div>
+            </div>
+            <div class="question-actions" data-actions>
+              <span data-selection-count>Выберите хотя бы один вариант</span>
+              <button class="next-button" type="button" data-next disabled>Далее →</button>
+            </div>
+          </div>
+
+          <div class="board-mark" aria-hidden="true">
+            <span>ATTUNE</span>
+            <span>SELECT / CONNECT / FIND</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js?v=17"></script>
+  </body>
+</html>

@@ -1,0 +1,20 @@
+# Локальные рабочие материалы Codex
+work/
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+
+# Локальные настройки и секреты
+.env
+.env.*
+!.env.example
+
+# Служебный файл без расширения — копия референса
+/1
+
+# Неиспользуемые дизайн-референсы
+/1.png
+/2.png
+/assets/hero-concepts/
+/assets/category-flow-concepts/
