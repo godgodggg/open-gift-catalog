@@ -869,6 +869,19 @@ function renderProgress() {
       goToStep(Number(button.dataset.routeStep));
     });
   });
+
+  if (window.matchMedia("(max-width: 767px)").matches) {
+    const currentItem = progress.querySelector(".progress__item.is-current");
+    if (currentItem) {
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      requestAnimationFrame(function () {
+        progress.scrollTo({
+          left: currentItem.offsetLeft - (progress.clientWidth - currentItem.offsetWidth) / 2,
+          behavior: reducedMotion ? "auto" : "smooth"
+        });
+      });
+    }
+  }
 }
 
 function renderOptions() {
