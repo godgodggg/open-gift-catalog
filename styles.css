@@ -4,6 +4,9 @@
   --line: #b8b8b1;
   --muted: #555550;
   --accent: #d8ff38;
+  --match-full: #168447;
+  --match-one: #d87900;
+  --match-two: #c9362b;
   --display: "Montserrat", "Arial Black", sans-serif;
   --mono: "Roboto Mono", Consolas, monospace;
 }
@@ -598,23 +601,95 @@ button {
   gap: 12px;
 }
 
+.empty-results {
+  grid-column: 1 / -1;
+  padding: clamp(38px, 7vw, 90px) 24px;
+  border: 1px dashed var(--ink);
+  text-align: center;
+}
+
+.empty-results strong {
+  display: block;
+  font-size: clamp(22px, 3vw, 42px);
+  font-weight: 900;
+  letter-spacing: -0.045em;
+}
+
+.empty-results p {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
 .gift-card {
   position: relative;
   display: flex;
   flex-direction: column;
   min-height: 220px;
   padding: 20px;
-  border: 1px solid var(--ink);
+  border: 2px solid var(--ink);
   background: rgba(247, 247, 244, 0.88);
+}
+
+.gift-card--full {
+  border-color: var(--match-full);
+}
+
+.gift-card--one-off {
+  border-color: var(--match-one);
+}
+
+.gift-card--two-off {
+  border-color: var(--match-two);
 }
 
 .gift-card__top {
   display: flex;
-  justify-content: flex-end;
-  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
   color: var(--muted);
   font-family: var(--mono);
   font-size: 9px;
+}
+
+.gift-card__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 800;
+}
+
+.gift-card__status i {
+  width: 8px;
+  height: 8px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--ink);
+}
+
+.gift-card--full .gift-card__status {
+  color: var(--match-full);
+}
+
+.gift-card--full .gift-card__status i {
+  background: var(--match-full);
+}
+
+.gift-card--one-off .gift-card__status {
+  color: var(--match-one);
+}
+
+.gift-card--one-off .gift-card__status i {
+  background: var(--match-one);
+}
+
+.gift-card--two-off .gift-card__status {
+  color: var(--match-two);
+}
+
+.gift-card--two-off .gift-card__status i {
+  background: var(--match-two);
 }
 
 .gift-card__score {
@@ -1131,8 +1206,20 @@ button {
   }
 
   .gift-card__top {
+    align-items: flex-start;
+    flex-direction: column;
     gap: 4px;
     font-size: 6px;
+  }
+
+  .gift-card__status {
+    gap: 4px;
+    line-height: 1.15;
+  }
+
+  .gift-card__status i {
+    width: 6px;
+    height: 6px;
   }
 
   .gift-card__score {
